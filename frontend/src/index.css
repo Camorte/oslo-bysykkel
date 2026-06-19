@@ -1,0 +1,7 @@
+@import 'tailwindcss';
+
+/* Tailwind's preflight sets `img { max-width: 100% }`, which breaks Leaflet
+   map tiles (seams/blank gaps). Restore native sizing inside the map. */
+.leaflet-container img {
+  max-width: none;
+}
