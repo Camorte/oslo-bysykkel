@@ -24,3 +24,6 @@ pnpm-debug.log*
 .idea/
 .DS_Store
 *.swp
+
+# Claude Code local files (worktrees, session state, etc.)
+.claude/
