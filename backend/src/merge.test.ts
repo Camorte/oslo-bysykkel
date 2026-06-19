@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { mergeStations } from "./bysykkel.ts";
+import { mergeStations } from "./merge.ts";
 
 const info = [
   { station_id: "2", name: "Bislett", lat: 59.92, lon: 10.73 },

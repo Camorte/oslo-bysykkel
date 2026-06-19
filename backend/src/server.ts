@@ -1,5 +1,5 @@
 import express from "express";
-import { getStations } from "./bysykkel.ts";
+import { getStations } from "./gbfs.ts";
 
 const app = express();
 const PORT = process.env.PORT ?? 3000;

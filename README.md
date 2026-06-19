@@ -15,8 +15,10 @@ oslo-bysykkel/
 ├── backend/                 # Node + Express + TypeScript API
 │   ├── src/
 │   │   ├── server.ts        # Express app, GET /api/stations
-│   │   ├── bysykkel.ts      # fetches + merges the two GBFS feeds
-│   │   └── bysykkel.test.ts # unit tests for the merge logic
+│   │   ├── gbfs.ts          # fetches the two GBFS feeds
+│   │   ├── merge.ts         # merges the feeds into the served shape
+│   │   ├── types.ts         # shared type definitions
+│   │   └── merge.test.ts    # unit tests for the merge logic
 │   ├── package.json
 │   └── tsconfig.json
 │
