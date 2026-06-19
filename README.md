@@ -24,7 +24,13 @@ oslo-bysykkel/
 │
 ├── frontend/                # Vite + React + TypeScript + Leaflet map
 │   ├── src/
-│   │   ├── App.tsx          # map, markers, popups, title + legend
+│   │   ├── App.tsx          # data fetching + map orchestration
+│   │   ├── components/
+│   │   │   ├── StationMarker.tsx  # one map marker + popup
+│   │   │   ├── Overlay.tsx        # title + legend
+│   │   │   ├── Loading.tsx        # loading spinner
+│   │   │   └── ErrorMessage.tsx   # error card with retry button
+│   │   ├── types.ts         # Station type
 │   │   ├── main.tsx         # React entry point
 │   │   └── index.css        # Tailwind import + one Leaflet fix
 │   ├── vite.config.ts       # Vite config + /api dev proxy
@@ -177,8 +183,6 @@ The scope was kept intentionally small. Natural next steps would be:
   backend to avoid hitting the GBFS feeds on every request.
 - **Schema validation** — validate the GBFS payloads (e.g. with `zod`) instead
   of trusting the typed shape, to fail loudly if the upstream format changes.
-- **Frontend resilience** — a "try again" button on the error state instead of
-  requiring a full page reload.
 - **Accessibility** — availability is currently shown by colour alone
   (green/red markers), which excludes colourblind users; add a second cue (icon,
   shape, or a count on the marker) and make the map and popups more usable with
